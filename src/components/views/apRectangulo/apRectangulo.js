@@ -1,9 +1,9 @@
 import React from "react";
 
-class apRectangulo extends React.Component {
+class APRectangulo extends React.Component {
   render() {
     return "apRectangulo";
   }
 }
 
-export default apRectangulo;
+export default APRectangulo;

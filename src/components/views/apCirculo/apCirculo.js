@@ -1,9 +1,9 @@
 import React from "react";
 
-class apCiculo extends React.Component {
+class APCiculo extends React.Component {
   render() {
     return "apCiculo";
   }
 }
 
-export default apCiculo;
+export default APCiculo;

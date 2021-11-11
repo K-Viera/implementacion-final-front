@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-class fibonacci extends React.Component{
-    render(){
-        return("fibonacci")
-    }
+class Fibonacci extends React.Component {
+  render() {
+    return "fibonacci";
+  }
 }
 
-export default fibonacci;
+export default Fibonacci;

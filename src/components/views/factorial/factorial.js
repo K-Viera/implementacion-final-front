@@ -1,9 +1,9 @@
 import React from "react";
 
-class factorial extends React.Component {
+class Factorial extends React.Component {
   render() {
     return "factorial";
   }
 }
 
-export default factorial;
+export default Factorial;

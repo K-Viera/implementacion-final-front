@@ -1,9 +1,9 @@
 import React from "react";
 
-class apTriangulo extends React.Component {
+class APTriangulo extends React.Component {
   render() {
-    return "apTriangulo";
+    return "APTriangulo";
   }
 }
 
-export default apTriangulo;
+export default APTriangulo;
