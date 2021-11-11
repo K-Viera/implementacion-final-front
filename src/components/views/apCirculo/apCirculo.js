@@ -1,9 +1,9 @@
 import React from "react";
 
-class APCiculo extends React.Component {
+class APCirculo extends React.Component {
   render() {
-    return "apCiculo";
+    return "apcirculo";
   }
 }
 
-export default APCiculo;
+export default APCirculo;

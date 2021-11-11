@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Fibonacci from "./components/views/Fibonacci/Fibonacci";
 import Factorial from "./components/views/Factorial/Factorial";
 import APTriangulo from "./components/views/APTriangulo/APTriangulo";
+import APTCirculo from "./components/views/APCirculo/APCirculo";
 import APRectangulo from "./components/views/APRectangulo/APRectangulo";
-import APCirculo from "./components/views/APCirculo/APCirculo";
 import Layout from "./components/Layouts/Layout";
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/factorial" element={<Factorial />} />
           <Route exact path="/aptriangulo" element={<APTriangulo />} />
           <Route exact path="/aprectangulo" element={<APRectangulo />} />
-          <Route exact path="/apcirculo" element={<APCirculo />} />
+          <Route exact path="/apcirculo" element={<APTCirculo />} />
         </Routes>
       </Layout>
     </BrowserRouter>
