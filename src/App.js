@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 
 import Fibonacci from "./components/views/Fibonacci/Fibonacci";
 import Factorial from "./components/views/Factorial/Factorial";

@@ -1,10 +1,11 @@
 import React from "react";
 import Footer from "./Footer";
-import Menu from "./Menu";
+import Navbar from "./Navbar";
+// import Menu from "./Menu";
 function Layout(props) {
   return (
     <React.Fragment>
-      <Menu />
+      <Navbar />
       {props.children}
       <br />
       <br />
