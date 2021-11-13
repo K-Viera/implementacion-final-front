@@ -2,11 +2,11 @@ import logo from "./logo.svg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 
-import Fibonacci from "./components/views/Fibonacci/Fibonacci";
-import Factorial from "./components/views/Factorial/Factorial";
-import APTriangulo from "./components/views/APTriangulo/APTriangulo";
-import APTCirculo from "./components/views/APCirculo/APCirculo";
-import APRectangulo from "./components/views/APRectangulo/APRectangulo";
+import Fibonacci from "./components/views/fibonacci/fibonacci";
+import Factorial from "./components/views/factorial/factorial";
+import APTriangulo from "./components/views/apTriangulo/apTriangulo";
+import APTCirculo from "./components/views/apCirculo/apCirculo";
+import APRectangulo from "./components/views/apRectangulo/apRectangulo";
 import Layout from "./components/Layouts/Layout";
 function App() {
   return (
