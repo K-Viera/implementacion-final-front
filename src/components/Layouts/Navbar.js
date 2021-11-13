@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar-items">
         <h1 className="navbar-logo">
-          Galaxy <i className="fab fa-react"></i>
+          Final App <i className="fab fa-react"></i>
         </h1>
         <div className="menu-icon" onClick={this.handleClick}>
           <i
