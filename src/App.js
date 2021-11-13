@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 
+import Fibonacci from "./components/views/fibonacci/fibonacci";
+import Factorial from "./components/views/factorial/factorial";
+import APTriangulo from "./components/views/apTriangulo/apTriangulo";
+import APTCirculo from "./components/views/apCirculo/apCirculo";
+import APRectangulo from "./components/views/apRectangulo/apRectangulo";
+import Layout from "./components/Layouts/Layout";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route exact path="/" element={<Fibonacci />} />
+          <Route exact path="/factorial" element={<Factorial />} />
+          <Route exact path="/aptriangulo" element={<APTriangulo />} />
+          <Route exact path="/aprectangulo" element={<APRectangulo />} />
+          <Route exact path="/apcirculo" element={<APTCirculo />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
