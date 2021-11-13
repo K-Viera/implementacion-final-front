@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Row, Col, Button, Card, Container } from "react-bootstrap";
+const { url } = require("../../global");
 
 class Fibonacci extends React.Component {
   state = {
     input: "",
+    response: "",
   };
 
   handleChange = (e) => {
@@ -14,6 +16,21 @@ class Fibonacci extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log("enviado");
+    let data = { input: this.state.input };
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then((response) =>
+        response.json().then((json) => {
+          this.setState({
+            ...this.state,
+            response: json,
+          });
+        })
+      )
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -57,7 +74,7 @@ class Fibonacci extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Resultado : <textarea value={this.state.input} readOnly />
+              Resultado : <textarea value={this.state.response} readOnly />
             </Row>
             <Row></Row>
           </Card.Body>
