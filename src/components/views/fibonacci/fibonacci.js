@@ -17,7 +17,7 @@ class Fibonacci extends React.Component {
     e.preventDefault();
     console.log("enviado");
     let data = { input: this.state.input };
-    fetch(url, {
+    fetch(url + "/fibonacci", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-type": "application/json; charset=UTF-8" },
