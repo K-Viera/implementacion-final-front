@@ -47,6 +47,7 @@ class Fibonacci extends React.Component {
                   <Form.Control
                     className="mb-3"
                     type="number"
+                    id="fibonacciInput"
                     name="input"
                     placeholder="Ingrese el valor"
                     onChange={this.handleChange}
@@ -61,6 +62,7 @@ class Fibonacci extends React.Component {
                 <Button
                   size="lg"
                   variant="outline-primary btn-block"
+                  id="fibonacciSubmit"
                   type="submit"
                   block
                 >
@@ -77,7 +79,7 @@ class Fibonacci extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Resultado : <textarea value={this.state.response} readOnly />
+              Resultado : <textarea id="fibonacciResponse" value={this.state.response} readOnly />
             </Row>
             <Row></Row>
           </Card.Body>
