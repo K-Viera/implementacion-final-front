@@ -49,6 +49,7 @@ class Factorial extends React.Component {
                     className="mb-3"
                     type="number"
                     name="input"
+                    id="input"
                     placeholder="Ingrese el valor"
                     onChange={this.handleChange}
                     value={this.state.input}
@@ -64,6 +65,7 @@ class Factorial extends React.Component {
                   variant="outline-primary btn-block"
                   type="submit"
                   block
+                  id="submit"
                 >
                   Calcular
                 </Button>
@@ -78,7 +80,8 @@ class Factorial extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Resultado : <textarea value={this.state.response} readOnly />
+              Resultado :{" "}
+              <textarea id="resultado" value={this.state.response} readOnly />
             </Row>
             <Row></Row>
           </Card.Body>

@@ -56,6 +56,7 @@ class APCirculo extends React.Component {
                 <Col>
                   <Form.Control
                     className="mb-3"
+                    id="radio"
                     type="number"
                     name="radio"
                     placeholder="Radio"
@@ -72,6 +73,7 @@ class APCirculo extends React.Component {
                   size="lg"
                   variant="outline-primary btn-block"
                   type="submit"
+                  id="submit"
                   block
                 >
                   Calcular
@@ -87,11 +89,12 @@ class APCirculo extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Area : <textarea value={this.state.area} readOnly />
+              Area : <textarea id="area" value={this.state.area} readOnly />
             </Row>
             <br />
             <Row>
-              Perimetro : <textarea value={this.state.perimetro} readOnly />
+              Perimetro :{" "}
+              <textarea id="perimetro" value={this.state.perimetro} readOnly />
             </Row>
           </Card.Body>
         </Card>
