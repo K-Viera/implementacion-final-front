@@ -15,21 +15,23 @@ class Factorial extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("enviado");
-    let data = { number: 3 };
-    fetch("https://es.numberempire.com/factorialcalculator.php", {
+    let data = {
+      input: this.state.input,
+    };
+    fetch(url + "/factorial", {
       method: "POST",
       body: JSON.stringify(data),
-      mode: "no-cors",
-      headers: {
-        "Content-type": "text/html; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-      },
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => console.log(err));
+      .then((response) =>
+        response.json().then((json) => {
+          this.setState({
+            ...this.state,
+            response: json,
+          });
+        })
+      )
+      .catch((err, res) => console.log(res));
   };
 
   render() {
