@@ -43,16 +43,19 @@ class Fibonacci extends React.Component {
           <Card.Body>
             <Form onSubmit={this.handleSubmit}>
               <Row>
-                <Form.Control
-                  type="number"
-                  name="input"
-                  placeholder="Ingrese el valor"
-                  onChange={this.handleChange}
-                  value={this.state.input}
-                  min="0"
-                  required
-                  autoFocus
-                ></Form.Control>
+                <Col>
+                  <Form.Control
+                    className="mb-3"
+                    type="number"
+                    name="input"
+                    placeholder="Ingrese el valor"
+                    onChange={this.handleChange}
+                    value={this.state.input}
+                    min="0"
+                    required
+                    autoFocus
+                  ></Form.Control>
+                </Col>
               </Row>
               <Row>
                 <Button
