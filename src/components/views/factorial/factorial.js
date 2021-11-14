@@ -16,18 +16,16 @@ class Factorial extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log("enviado");
-    let data = { input: this.state.input };
-    fetch(
-      "https://api.wolframalpha.com/v2/query?input=factorial(" +
-        this.state.input +
-        ")&format=minput,plaintext&output=JSON&appid=DEMO",
-      {
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    )
+    let data = { number: 3 };
+    fetch("https://es.numberempire.com/factorialcalculator.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      mode: "no-cors",
+      headers: {
+        "Content-type": "text/html; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
       .then((response) => {
         console.log(response);
       })
