@@ -12,28 +12,38 @@ class APTriangulo extends React.Component {
   };
 
   handleChange = (e) => {
-    this.setState({
-      input: e.target.value,
-    });
+    this.setState({ [e.target.name]: e.target.value });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("enviado");
-    let data = { input: this.state.input };
-    fetch(url + "/fibonacci", {
+    let data = {
+      lado1: this.state.lado1,
+      lado2: this.state.lado2,
+      lado3: this.state.lado3,
+    };
+    fetch(url + "/triangulo", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
       .then((response) =>
         response.json().then((json) => {
-          this.setState({
-            ...this.state,
-            response: json,
-          });
+          if (json.area) {
+            this.setState({
+              ...this.state,
+              area: json.area,
+              perimetro: json.perimetro,
+            });
+          } else {
+            this.setState({
+              ...this.state,
+              area: json,
+              perimetro: json,
+            });
+          }
         })
       )
-      .catch((err) => console.log(err));
+      .catch((err, res) => console.log(res));
   };
 
   render() {
@@ -112,11 +122,11 @@ class APTriangulo extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Area : <textarea value={this.state.response} readOnly />
+              Area : <textarea value={this.state.area} readOnly />
             </Row>
             <br />
             <Row>
-              Perimetro : <textarea value={this.state.response} readOnly />
+              Perimetro : <textarea value={this.state.perimetro} readOnly />
             </Row>
           </Card.Body>
         </Card>

@@ -17,19 +17,20 @@ class Factorial extends React.Component {
     e.preventDefault();
     console.log("enviado");
     let data = { input: this.state.input };
-    fetch(url + "/fibonacci", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-type": "application/json; charset=UTF-8" },
-    })
-      .then((response) =>
-        response.json().then((json) => {
-          this.setState({
-            ...this.state,
-            response: json,
-          });
-        })
-      )
+    fetch(
+      "https://api.wolframalpha.com/v2/query?input=factorial(" +
+        this.state.input +
+        ")&format=minput,plaintext&output=JSON&appid=DEMO",
+      {
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response);
+      })
       .catch((err) => console.log(err));
   };
 

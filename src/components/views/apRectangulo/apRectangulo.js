@@ -15,7 +15,6 @@ class APRectangulo extends React.Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("enviado");
     let data = { lado1: this.state.lado1, lado2: this.state.lado2 };
     fetch(url + "/rectangulo", {
       method: "POST",
@@ -24,11 +23,19 @@ class APRectangulo extends React.Component {
     })
       .then((response) =>
         response.json().then((json) => {
-          this.setState({
-            ...this.state,
-            area: json.area,
-            perimetro: json.perimetro,
-          });
+          if (json.area) {
+            this.setState({
+              ...this.state,
+              area: json.area,
+              perimetro: json.perimetro,
+            });
+          } else {
+            this.setState({
+              ...this.state,
+              area: json,
+              perimetro: json,
+            });
+          }
         })
       )
       .catch((err) => console.log(err));
