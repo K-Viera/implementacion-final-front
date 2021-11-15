@@ -58,6 +58,7 @@ class APRectangulo extends React.Component {
                     className="mb-3"
                     type="number"
                     name="lado1"
+                    id="lado1"
                     placeholder="Lado Uno"
                     onChange={this.handleChange}
                     value={this.state.lado1}
@@ -73,6 +74,7 @@ class APRectangulo extends React.Component {
                     className="mb-3"
                     type="number"
                     name="lado2"
+                    id="lado2"
                     placeholder="Lado Dos"
                     onChange={this.handleChange}
                     value={this.state.lado2}
@@ -87,6 +89,7 @@ class APRectangulo extends React.Component {
                   size="lg"
                   variant="outline-primary btn-block"
                   type="submit"
+                  id="submit"
                   block
                 >
                   Calcular
@@ -102,11 +105,12 @@ class APRectangulo extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Area : <input value={this.state.area} readOnly />
+              Area : <input id="area" value={this.state.area} readOnly />
             </Row>
             <br />
             <Row>
-              Perimetro : <input value={this.state.perimetro} readOnly />
+              Perimetro :{" "}
+              <input id="perimetro" value={this.state.perimetro} readOnly />
             </Row>
           </Card.Body>
         </Card>

@@ -62,6 +62,7 @@ class APTriangulo extends React.Component {
                   <Form.Control
                     className="mb-3"
                     type="number"
+                    id="lado1"
                     name="lado1"
                     placeholder="Lado Uno"
                     onChange={this.handleChange}
@@ -77,6 +78,7 @@ class APTriangulo extends React.Component {
                   <Form.Control
                     className="mb-3"
                     type="number"
+                    id="lado2"
                     name="lado2"
                     placeholder="Lado Dos"
                     onChange={this.handleChange}
@@ -93,6 +95,7 @@ class APTriangulo extends React.Component {
                     className="mb-3"
                     type="number"
                     name="lado3"
+                    id="lado3"
                     placeholder="Lado Tres"
                     onChange={this.handleChange}
                     value={this.state.input}
@@ -107,6 +110,7 @@ class APTriangulo extends React.Component {
                   size="lg"
                   variant="outline-primary btn-block"
                   type="submit"
+                  id="submit"
                   block
                 >
                   Calcular
@@ -122,11 +126,12 @@ class APTriangulo extends React.Component {
           </Card.Header>
           <Card.Body>
             <Row>
-              Area : <textarea value={this.state.area} readOnly />
+              Area : <textarea id="area" value={this.state.area} readOnly />
             </Row>
             <br />
             <Row>
-              Perimetro : <textarea value={this.state.perimetro} readOnly />
+              Perimetro :{" "}
+              <textarea id="perimetro" value={this.state.perimetro} readOnly />
             </Row>
           </Card.Body>
         </Card>
